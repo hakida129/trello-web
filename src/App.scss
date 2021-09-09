@@ -1,38 +1,122 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
+
+$gap: 10px;
+$column-header-height: 36px;
+$column-footer-height: 36px;
+$column-border-radius: 5px;
+$column-card-radius: 4px;
+
+$board-bg-color:#0079bf;
+$appboard-bg-color:#0067a3;
+$list-bg-color:#ebecf0;
+$common-element-bg: rgba(255,255,255,0.24);
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+  line-height: 1.3em;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.trello-master {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 40px 50px 1fr;
+  background-color: $board-bg-color;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .navbar {
+    padding-left: $gap;
+    display: flex;
+    align-items: center;
+    &.app {
+      background-color: $appboard-bg-color;
+      font-size: 1.5rem;
+    }
+    &.board {
+      background-color: $board-bg-color;
+      font-size: 1.1rem;
+
+    }
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  .board-columns {
+    display: flex;
+    margin: 0 $gap $gap $gap;
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      -webkit-appearance: none;
+    }
+    &::-webkit-scrollbar:horizontal {
+      height: 11px;
+    }
+    &::-webkit-scrollbar-thumb {
+      // background-color: darken($list-bg-color, 15);
+      background-color: $common-element-bg;
+      border-radius: 8px;
+    }
+    .column {
+      flex: 0 0 auto;
+      width: 300px;
+      height: calc(100% - #{gap});
+      &:not(:first-child){
+        margin-left: $gap;
+      }
+      > * {
+        background-color: $list-bg-color;
+        color: #333;
+        padding: 0 8px;
+      }
+      header {
+        padding-left: 15px;
+        height: $column-header-height;
+        line-height: $column-header-height;
+        font-size: 16px;
+        font-weight: bold;
+        border-top-left-radius: $column-border-radius;
+        border-top-right-radius: $column-border-radius;
+      }
+      footer {
+        padding-left: $gap;
+        height: $column-footer-height;
+        line-height: $column-footer-height;
+        border-bottom-left-radius: $column-border-radius;
+        border-bottom-right-radius: $column-border-radius;
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        max-height: calc(100% - #{$column-header-height} - #{$column-footer-height});
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+          -webkit-appearance: none;
+        }
+        &::-webkit-scrollbar:vertical {
+          width: 11px;
+        }
+        &::-webkit-scrollbar-thumb {
+          // background-color: darken($list-bg-color, 15);
+          background-color: darken($color:$list-bg-color, $amount: 15);
+          border-right: 5px solid $list-bg-color;
+        }
+        li {
+          background-color: white;
+          padding: $gap;
+          border-radius: $column-card-radius;
+          box-shadow: 0 1px 1px rgba(0 ,0, 0, 0.1);
+          &:not(:last-child){
+            margin-bottom: $gap;
+          }
+          img {
+            display: block ;
+            width: calc(100% + 2 * #{$gap});
+            margin: -$gap 0 $gap (-$gap);
+            border-top-left-radius: $column-card-radius;
+            border-top-right-radius: $column-card-radius;
+          }
+        }
+      }
+    }
   }
 }
