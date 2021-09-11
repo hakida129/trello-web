@@ -1,5 +1,5 @@
-import React from 'react';
-import './BoardBar.scss';
+import React from 'react'
+import './BoardBar.scss'
 
 function BoardBar() {
   return (

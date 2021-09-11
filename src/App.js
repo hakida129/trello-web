@@ -1,5 +1,5 @@
-import React from 'react';
-import './App.scss';
+import React from 'react'
+import './App.scss'
 
 import AppBar from 'components/AppBar/AppBar'
 import BoardBar from 'components/BoardBar/BoardBar'
@@ -12,7 +12,7 @@ function App() {
       <BoardBar />
       <BoardContent />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

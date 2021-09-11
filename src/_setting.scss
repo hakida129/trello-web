@@ -1,8 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
 
+$gap: 10px;
+
+
+//Height = appbar + boardbar + boardcontent = 100vh
+$navbar-app-height:4vh;
+$navbar-board-height:5vh;
+$board-content-height:91vh;
+
+//color
 $board-bg-color:#0079bf;
 $common-element-bg: rgba(255,255,255,0.24);
-$gap: 10px;
 
 //Screen
 $screen-lg: 1201px;
