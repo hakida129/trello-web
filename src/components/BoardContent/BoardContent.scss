@@ -2,9 +2,10 @@
 @import '_setting.scss';
 
 .board-content {
+  display: flex;
   height: $board-content-height;
   overflow-x: auto;
-  // overflow: hidden;
+  overflow: hidden;
   &::-webkit-scrollbar {
     -webkit-appearance: none;
   }
@@ -21,4 +22,20 @@
     border: 1px dashed #abc;
     margin: 5px 45px 5px 5px;
   }
+  .add-new-column {
+    margin-left: $gap;
+    background-color: hsla(0, 0%, 100%, .24);
+    width: 250px;
+    height: 32px;
+    line-height: 32px;
+    font-style: 15px;
+    cursor: pointer;
+    padding:4px 0 4px 15px;
+    color: white;
+    border-radius: 4px;
+    &:hover {
+      background-color: hsla(0, 0%, 100%, .34);
+    }
+  }
+
 }
