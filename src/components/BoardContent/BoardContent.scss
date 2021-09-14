@@ -5,7 +5,7 @@
   display: flex;
   height: $board-content-height;
   overflow-x: auto;
-  overflow: hidden;
+  // overflow: hidden;
   &::-webkit-scrollbar {
     -webkit-appearance: none;
   }
@@ -30,11 +30,37 @@
     line-height: 32px;
     font-style: 15px;
     cursor: pointer;
-    padding:4px 0 4px 15px;
+    // padding:4px 0 4px 15px;
     color: white;
     border-radius: 4px;
     &:hover {
       background-color: hsla(0, 0%, 100%, .34);
+    }
+  }
+  .enter-new-column {
+    margin-left: $gap;
+    width: 250px;
+    max-width: 250px;
+    outline: none;
+    line-height:32px;
+    padding:4px 10px;
+    background-color: $column-bg-color;
+    border-radius: 4px;
+    .input-enter-new-column{
+      margin: 4px 0;
+      outline: none;
+    }
+    span.cancel-new-column {
+      margin-left: $gap;
+      cursor: pointer;
+      i {
+        font-size: 26px;
+        color:rgba(247, 6, 6, .6);
+        &:hover {
+          color:rgba(247, 6, 6, 1)
+      }
+
+      }
     }
   }
 
