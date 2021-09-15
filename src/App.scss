@@ -36,7 +36,21 @@ body {
   [type=email].form-control:focus,
   [type=tel].form-control:focus,
   [contenteditable].form-control:focus {
-    box-shadow: #ccc;
-    outline: none;
+    box-shadow: none;
+  }
+  .btn:focus, .btn:active {
+    box-shadow: none !important;
+    outline: none !important;
+  }
+  .content-editTable {
+    background-color: inherit;
+    border: none;
+    font-size: inherit;
+    font-weight: inherit;
+    cursor: pointer;
+    &:focus {
+      background-color:white;
+      border: 1px solid $input-border-color;
+    }
   }
 }
