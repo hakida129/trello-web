@@ -103,7 +103,7 @@ function Column(props) {
             <Dropdown.Toggle id="dropdown-basic" size="sm" className="dropdown-btn"/>
 
             <Dropdown.Menu>
-              <Dropdown.Item >Add Card...</Dropdown.Item>
+              <Dropdown.Item onClick={toggleOpenNewCardForm}>Add Card...</Dropdown.Item>
               <Dropdown.Item onClick={toggleShowConfirmModal}>Remove column...</Dropdown.Item>
               <Dropdown.Item >Remove all card...</Dropdown.Item>
             </Dropdown.Menu>
